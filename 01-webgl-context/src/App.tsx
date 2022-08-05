@@ -13,15 +13,13 @@ function App() {
   useEffect(() => {
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 
-    if (canvas) {
-      const gl = canvas.getContext("webgl2") as WebGL2RenderingContext;
+    const gl = canvas.getContext("webgl2") as WebGL2RenderingContext;
 
     setContext({
       version: gl.getParameter(gl.VERSION),
       shadingLanguageVersion: gl.getParameter(gl.SHADING_LANGUAGE_VERSION),
       vendor: gl.getParameter(gl.VENDOR),
     });
-    }
   }, []);
 
   return (
